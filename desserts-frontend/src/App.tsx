@@ -1,3 +1,4 @@
+import Cart from "./components/Cart"
 import DessertCard, { DessertCardProp } from "./components/DessertCard"
 import { useEffect, useState } from "react"
 const App = () => {
@@ -10,12 +11,17 @@ const App = () => {
   },[])
   
   return (
-    <div className="dessert-grid">
-       {
-        desserts.map(dessert => <DessertCard {...dessert}/>)
-       }
-        
-    </div>
+    <section className="home">
+      <div>
+        <h1>Desserts</h1>
+      <div className="dessert-grid">
+        {
+          desserts.map(dessert => <DessertCard {...dessert}/>)
+        }
+      </div>
+      </div>
+      <Cart/>
+    </section>
   )
 }
 
